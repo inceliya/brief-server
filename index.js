@@ -88,6 +88,8 @@ app.get("/refresh", refresh, async (req, res) => {
     "Set-Cookie",
     cookie.serialize("refreshToken", refreshToken, {
       httpOnly: true,
+      sameSite: "none",
+      secure: true,
       maxAge: authConstants.refreshTokenAge,
     })
   );
