@@ -59,6 +59,7 @@ app.post("/login", async (req, res) => {
       cookie.serialize("refreshToken", refreshToken, {
         httpOnly: true,
         sameSite: "none",
+        secure: true,
         maxAge: authConstants.refreshTokenAge,
       })
     )
