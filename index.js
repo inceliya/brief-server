@@ -18,9 +18,21 @@ mongoose
   .then((res) => console.log("connected to db"))
   .catch((error) => console.log(error));
 
+var whitelist = ['http://localhost:3000', 'https://projectbriefipz193zms.azurewebsites.net/']
+var corsOptions = {
+  origin: function (origin, callback) {
+    if (whitelist.indexOf(origin) !== -1) {
+      callback(null, true)
+    } else {
+      callback(new Error('Not allowed by CORS'))
+    }
+  },
+  credentials: true,
+}
+
 const app = express();
 app.use(bodyParser.json());
-app.use(cors());
+app.use(cors(corsOptions));
 app.use(cookieParser());
 
 const port = process.env.PORT || 2999;
