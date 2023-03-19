@@ -18,7 +18,7 @@ mongoose
   .then((res) => console.log("connected to db"))
   .catch((error) => console.log(error));
 
-var whitelist = ['http://localhost:3000', 'https://projectbriefipz193zms.azurewebsites.net']
+var whitelist = ['http://localhost:3000', 'https://projectbriefipz193zms.azurewebsites.net', 'https://projectbriefipz193zms.onrender.com/']
 var corsOptions = {
   origin: function (origin, callback) {
     if (whitelist.indexOf(origin) !== -1) {
