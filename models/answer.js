@@ -49,6 +49,30 @@ const answerSchema = new Schema(
     isFavourite: {
       type: Boolean,
     },
+    projectName: {
+      type: String,
+    },
+    stakeHolders: {
+      type: String,
+    },
+    services: {
+      type: String,
+    },
+    competition: {
+      type: String,
+    },
+    strengths: {
+      type: String,
+    },
+    weaknesses: {
+      type: String,
+    },
+    brandInfo: {
+      type: String,
+    },
+    primaryContact: {
+      type: String,
+    },
   },
   { timeseries: true }
 );
